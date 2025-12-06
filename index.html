@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Nizar & Partners is a boutique law firm in Kuala Lumpur offering civil & criminal litigation, corporate law, conveyancing, and dispute resolution services.">
+    <meta name="keywords" content="law firm, Kuala Lumpur, Petaling Jaya, advocates, solicitors, litigation, corporate law, criminal defense, conveyancing">
+    <meta name="author" content="Nizar & Partners">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Nizar & Partners | Advocates & Solicitors">
+    <meta property="og:description" content="Boutique law firm in Kuala Lumpur offering comprehensive legal services across all financial capabilities.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Nizar & Partners | Advocates & Solicitors">
+    <meta property="twitter:description" content="Boutique law firm in Kuala Lumpur offering comprehensive legal services.">
+
+    <title>Nizar & Partners | Advocates & Solicitors in Kuala Lumpur</title>
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="static/css/main.css">
+    
+</head>
+<body>
+    <!-- Skip to main content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header & Navigation -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="#home" onclick="Router.navigateTo('home'); return false;" class="logo">
+                        <img src="static/images/nizar_logo.svg" alt="Nizar & Partners - Advocates & Solicitors" class="logo__image">
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+
+                <!-- Navigation -->
+                <nav class="nav" id="main-nav" aria-label="Main navigation">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#home" onclick="Router.navigateTo('home'); return false;" class="nav__link active" data-nav="home">Home</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#about" onclick="Router.navigateTo('about'); return false;" class="nav__link" data-nav="about">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#practice-areas" onclick="Router.navigateTo('practice-areas'); return false;" class="nav__link" data-nav="practice-areas">Practice Areas</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#our-people" onclick="Router.navigateTo('our-people'); return false;" class="nav__link" data-nav="our-people">Our People</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#articles" onclick="Router.navigateTo('articles'); return false;" class="nav__link" data-nav="articles">Articles</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contact" onclick="Router.navigateTo('contact'); return false;" class="nav__link nav__link--cta" data-nav="contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main">
+        <div id="page-content" class="page-transition">
+            <!-- Loading state -->
+            <div class="loading-container">
+                <div class="loader"></div>
+                <p>Loading...</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <p class="footer__text">
+                        &copy; 2025 Nizar & Partners. All rights reserved.
+                    </p>
+                    <p class="footer__text">
+                        Advocates & Solicitors - 1st Floor, Middle Office, 627 Jalan 17/8, 46400 Petaling Jaya, Selangor
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="static/js/utils.js"></script>
+    <script src="static/js/router.js"></script>
+    <script src="static/js/navigation.js"></script>
+    <script src="static/js/form.js"></script>
+    <script src="static/js/animations.js"></script>
+    <script src="static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+/* =================================
+   FIXED Animation Utilities
+   Working scroll reveal animations
+   ================================= */
+
+/* ===== Keyframe Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===== Animation Classes ===== */
+/* IMPORTANT: Elements start with opacity: 0 set via JS, not CSS */
+/* This prevents the flash of visible content before animation */
+
+.fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.scale-in {
+  animation: scaleIn 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.float-in {
+  animation: floatIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Ensure animated elements are visible after animation completes */
+.animation-done {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* ===== Stagger Animation Delays ===== */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+.delay-7 { animation-delay: 0.7s; }
+.delay-8 { animation-delay: 0.8s; }
+
+/* ===== Performance Optimizations ===== */
+[data-animate] {
+  will-change: opacity, transform;
+}
+
+.animation-done {
+  will-change: auto;
+}
+
+/* ===== Page Transitions ===== */
+.page-transition {
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ===== Loading States ===== */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: var(--spacing-md, 1.5rem);
+}
+
+.loading-container p {
+  color: var(--color-text-light, #6b7280);
+  font-size: var(--font-size-lg, 1.125rem);
+}
+
+.loader {
+  border: 3px solid var(--color-border, #e5e7eb);
+  border-top: 3px solid var(--color-accent, #d4af37);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== Error Container ===== */
+.error-container {
+  text-align: center;
+  padding: var(--spacing-xl, 3rem);
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-md, 1.5rem);
+}
+
+.error-container h1 {
+  color: var(--color-text, #1a1a2e);
+  margin-bottom: var(--spacing-sm, 0.75rem);
+}
+
+.error-container p {
+  color: var(--color-text-light, #6b7280);
+  margin-bottom: var(--spacing-md, 1.5rem);
+}

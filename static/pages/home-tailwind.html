@@ -1,0 +1,232 @@
+<!-- HOME PAGE - CONVERTED TO TAILWIND + LUCIDE -->
+<!-- This is a drop-in replacement for static/pages/home.html -->
+
+<!-- Hero Section with Banner Image -->
+<div class="relative min-h-screen flex items-center justify-center -mt-20">
+    <!-- Background Image -->
+    <div class="absolute inset-0 overflow-hidden">
+        <img src="static/images/skyline.jpg" 
+             alt="Kuala Lumpur skyline representing modern legal services" 
+             class="w-full h-full object-cover"
+             style="filter: blur(1px)"
+             loading="eager">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-black/70"></div>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+        <h1 class="font-serif mb-6" data-animate="fade-in-up">
+            <span class="block text-5xl md:text-7xl font-bold mb-3">NIZAR & PARTNERS</span>
+            <span class="block text-2xl md:text-3xl font-medium text-gray-200">Advocates & Solicitors</span>
+        </h1>
+        
+        <p class="text-xl md:text-2xl mb-12 text-gray-200 max-w-3xl mx-auto" data-animate="fade-in-up delay-1">
+            A boutique law firm founded and fully operating in Kuala Lumpur
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" data-animate="fade-in-up delay-2">
+            <a href="#contact" 
+               onclick="Router.navigateTo('contact'); return false;" 
+               class="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105 font-medium text-lg shadow-lg">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+                Get In Touch
+            </a>
+            
+            <a href="#about" 
+               onclick="Router.navigateTo('about'); return false;" 
+               class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-lg transition-all font-medium text-lg">
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                Learn More
+            </a>
+        </div>
+    </div>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <i data-lucide="chevron-down" class="w-8 h-8 text-white"></i>
+    </div>
+</div>
+
+<!-- Features Section -->
+<section class="py-20 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+            
+            <!-- Feature 1: Expert Legal Dexterity -->
+            <div class="text-center p-8 rounded-xl hover:shadow-2xl transition-all duration-300" data-animate="fade-in-up">
+                <!-- Icon Circle -->
+                <div class="inline-flex items-center justify-center w-20 h-20 mb-6 bg-gradient-to-br from-accent/20 to-accent/10 rounded-full">
+                    <i data-lucide="users" class="w-10 h-10 text-accent"></i>
+                </div>
+                
+                <!-- Title -->
+                <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-4 text-primary">
+                    Expert Legal Dexterity
+                </h3>
+                
+                <!-- Description -->
+                <p class="text-gray-600 leading-relaxed text-lg">
+                    A dynamic, well-versed team, expert in the practice of both civil and criminal litigation
+                </p>
+            </div>
+
+            <!-- Feature 2: Extensive Portfolio Range -->
+            <div class="text-center p-8 rounded-xl hover:shadow-2xl transition-all duration-300" data-animate="fade-in-up delay-2">
+                <!-- Icon Circle -->
+                <div class="inline-flex items-center justify-center w-20 h-20 mb-6 bg-gradient-to-br from-accent/20 to-accent/10 rounded-full">
+                    <i data-lucide="file-text" class="w-10 h-10 text-accent"></i>
+                </div>
+                
+                <!-- Title -->
+                <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-4 text-primary">
+                    Extensive Portfolio Range
+                </h3>
+                
+                <!-- Description -->
+                <p class="text-gray-600 leading-relaxed text-lg">
+                    Full spectrum of legal services from litigation and dispute resolutions to corporate and commercial legal services
+                </p>
+            </div>
+
+            <!-- Feature 3: Further Expertise -->
+            <div class="text-center p-8 rounded-xl hover:shadow-2xl transition-all duration-300" data-animate="fade-in-up delay-4">
+                <!-- Icon Circle -->
+                <div class="inline-flex items-center justify-center w-20 h-20 mb-6 bg-gradient-to-br from-accent/20 to-accent/10 rounded-full">
+                    <i data-lucide="shield" class="w-10 h-10 text-accent"></i>
+                </div>
+                
+                <!-- Title -->
+                <h3 class="text-2xl md:text-3xl font-serif font-semibold mb-4 text-primary">
+                    Further Expertise
+                </h3>
+                
+                <!-- Description -->
+                <p class="text-gray-600 leading-relaxed text-lg">
+                    Both advisory and legal representation in quasi-criminal and other criminal matters
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Practice Areas Preview Section -->
+<section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div class="text-center mb-16" data-animate="fade-in-up">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold text-primary mb-4">
+                Our Practice Areas
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Comprehensive legal services tailored to meet your needs
+            </p>
+        </div>
+
+        <!-- Practice Areas Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <!-- Practice Area 1 -->
+            <div class="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow" data-animate="fade-in-up">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <i data-lucide="scale" class="w-6 h-6 text-accent"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-primary mb-2">Civil Litigation</h3>
+                        <p class="text-gray-600 text-sm">Expert representation in civil disputes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practice Area 2 -->
+            <div class="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow" data-animate="fade-in-up delay-1">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <i data-lucide="briefcase" class="w-6 h-6 text-accent"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-primary mb-2">Corporate Law</h3>
+                        <p class="text-gray-600 text-sm">Business legal advisory services</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practice Area 3 -->
+            <div class="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow" data-animate="fade-in-up delay-2">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <i data-lucide="home" class="w-6 h-6 text-accent"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-primary mb-2">Conveyancing</h3>
+                        <p class="text-gray-600 text-sm">Property transaction expertise</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practice Area 4 -->
+            <div class="bg-white p-6 rounded-lg hover:shadow-lg transition-shadow" data-animate="fade-in-up delay-3">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <i data-lucide="gavel" class="w-6 h-6 text-accent"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-primary mb-2">Criminal Defense</h3>
+                        <p class="text-gray-600 text-sm">Comprehensive criminal law services</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- View All Link -->
+        <div class="text-center mt-12" data-animate="fade-in-up delay-4">
+            <a href="#practice-areas" 
+               onclick="Router.navigateTo('practice-areas'); return false;"
+               class="inline-flex items-center gap-2 text-accent hover:text-accent-light font-medium text-lg transition-colors">
+                View All Practice Areas
+                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Call-to-Action Section -->
+<section class="py-20 bg-gradient-to-br from-primary to-gray-900 text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6" data-animate="fade-in-up">
+                Ready to Get Started?
+            </h2>
+            
+            <p class="text-xl text-gray-300 mb-12 leading-relaxed" data-animate="fade-in-up delay-1">
+                Contact us today for a consultation. Our experienced team is ready to provide you with the legal expertise you need.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center" data-animate="fade-in-up delay-2">
+                <a href="#contact" 
+                   onclick="Router.navigateTo('contact'); return false;"
+                   class="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-white px-8 py-4 rounded-lg transition-all transform hover:scale-105 font-medium text-lg shadow-lg">
+                    <i data-lucide="phone" class="w-5 h-5"></i>
+                    Contact Us Today
+                </a>
+                
+                <a href="#about" 
+                   onclick="Router.navigateTo('about'); return false;"
+                   class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border-2 border-white/30 px-8 py-4 rounded-lg transition-all font-medium text-lg">
+                    <i data-lucide="info" class="w-5 h-5"></i>
+                    Learn About Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Initialize Lucide Icons -->
+<script>
+    // Initialize Lucide icons when this page loads
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+</script>

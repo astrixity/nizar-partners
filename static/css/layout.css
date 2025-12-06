@@ -1,0 +1,251 @@
+/* =================================
+   Layout Styles
+   Grid System & Container
+   ================================= */
+
+/* ===== Container ===== */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.container--narrow {
+  max-width: var(--max-width-narrow);
+}
+
+.container--wide {
+  max-width: var(--max-width-wide);
+}
+
+.container--full {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ===== Main Layout ===== */
+.main {
+  position: relative;
+  min-height: 100vh;
+  padding-top: var(--header-height);
+  width: 100%;
+}
+
+/* Remove padding for home page */
+.main--home {
+  padding-top: 0;
+}
+
+/* Page Content Container */
+#page-content {
+  width: 100%;
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* ===== Sections ===== */
+.section {
+  position: relative;
+  display: block;
+  padding: var(--section-padding) 0;
+  width: 100%;
+}
+
+#page-content.page-transition {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.section.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section--home {
+  padding: 0;
+}
+
+/* Section Header */
+.section__header {
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.section__title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-sm);
+  color: var(--color-text);
+}
+
+.section__subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-light);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
+}
+
+/* ===== Grid System ===== */
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Auto fit grid */
+.grid--auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ===== Flexbox Utilities ===== */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+/* ===== Spacing Utilities ===== */
+.gap-xs { gap: var(--spacing-xs); }
+.gap-sm { gap: var(--spacing-sm); }
+.gap-md { gap: var(--spacing-md); }
+.gap-lg { gap: var(--spacing-lg); }
+.gap-xl { gap: var(--spacing-xl); }
+.gap-2xl { gap: var(--spacing-2xl); }
+
+/* Margin utilities */
+.mt-xs { margin-top: var(--spacing-xs); }
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+
+.mb-xs { margin-bottom: var(--spacing-xs); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+
+/* ===== Responsive Utilities ===== */
+.hide-mobile {
+  display: none;
+}
+
+.hide-desktop {
+  display: block;
+}
+
+/* ===== Responsive Grid ===== */
+@media (max-width: 768px) {
+  .main {
+    padding-top: var(--header-height-mobile);
+  }
+
+  .main--home {
+    padding-top: 0;
+  }
+
+  .container {
+    padding-left: var(--container-padding-mobile);
+    padding-right: var(--container-padding-mobile);
+  }
+
+  .section {
+    padding: var(--section-padding-mobile) 0;
+  }
+
+  .section__header {
+    margin-bottom: var(--spacing-2xl);
+  }
+
+  .section__title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: block;
+  }
+
+  .hide-desktop {
+    display: none;
+  }
+}
+
+/* ===== Print Styles ===== */
+@media print {
+  .section {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+    page-break-inside: avoid;
+  }
+
+  .header,
+  .footer,
+  .skip-link,
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+}
