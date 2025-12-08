@@ -3,110 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nizar & Partners is a boutique law firm in Kuala Lumpur offering civil & criminal litigation, corporate law, conveyancing, and dispute resolution services.">
-    <meta name="keywords" content="law firm, Kuala Lumpur, Petaling Jaya, advocates, solicitors, litigation, corporate law, criminal defense, conveyancing">
-    <meta name="author" content="Nizar & Partners">
+    <meta name="description" content="Nizar & Partners - Professional legal solutions for real-world decisions. Advocates & Solicitors in Kuala Lumpur, Malaysia.">
+    <title>Nizar & Partners | Advocates & Solicitors</title>
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Nizar & Partners | Advocates & Solicitors">
-    <meta property="og:description" content="Boutique law firm in Kuala Lumpur offering comprehensive legal services across all financial capabilities.">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:title" content="Nizar & Partners | Advocates & Solicitors">
-    <meta property="twitter:description" content="Boutique law firm in Kuala Lumpur offering comprehensive legal services.">
-
-    <title>Nizar & Partners | Advocates & Solicitors in Kuala Lumpur</title>
-
-    <!-- Preconnect to Google Fonts -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="static/css/main.css">
-    
-</head>
-<body>
-    <!-- Skip to main content (Accessibility) -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            900: '#0f172a',
+                            800: '#1e293b',
+                            700: '#334155',
+                        },
+                        accent: {
+                            DEFAULT: '#99ACFF',
+                            light: '#B3C2FF',
+                            dark: '#7A8FE8',
+                        },
+                        neutral: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            600: '#475569',
+                            800: '#1e293b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
-    <!-- Header & Navigation -->
-    <header class="header" id="header">
-        <div class="container">
-            <div class="header__content">
-                <div class="header__logo">
-                    <a href="#home" onclick="Router.navigateTo('home'); return false;" class="logo">
-                        <img src="static/images/nizar_logo.svg" alt="Nizar & Partners - Advocates & Solicitors" class="logo__image">
-                    </a>
-                </div>
+    <style>
+        /* Smooth transitions for page content */
+        #page-content {
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        #page-content.fade-out {
+            opacity: 0;
+        }
+
+        #page-content.fade-in {
+            opacity: 1;
+        }
+
+        /* Navigation transparency styles */
+        header {
+            transition: all 0.3s ease-in-out;
+        }
+
+        header.transparent {
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+
+        header.transparent .nav-link,
+        header.transparent #mobile-menu-btn {
+            color: white !important;
+        }
+
+        header.transparent .nav-link:hover {
+            color: #B3C2FF !important;
+        }
+
+        header.transparent a[href="#contact"] {
+            background-color: #99ACFF;
+            color: white;
+        }
+
+        header.transparent a[href="#contact"]:hover {
+            background-color: #7A8FE8;
+        }
+
+        /* Make logo white when header is transparent */
+        header.transparent img {
+            filter: brightness(0) invert(1);
+            transition: filter 0.3s ease-in-out;
+        }
+
+        header:not(.transparent) img {
+            filter: none;
+            transition: filter 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="font-sans text-neutral-800 bg-neutral-50">
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 w-full bg-white shadow-md z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center nav-link">
+                    <img src="assets/images/nizar_logo.svg" alt="Nizar & Partners" class="h-12">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-neutral-700 hover:text-accent font-medium transition-colors duration-300">Home</a>
+                    <a href="#about" class="nav-link text-neutral-700 hover:text-accent font-medium transition-colors duration-300">About</a>
+                    <a href="#practice-areas" class="nav-link text-neutral-700 hover:text-accent font-medium transition-colors duration-300">Practice Areas</a>
+                    <a href="#team" class="nav-link text-neutral-700 hover:text-accent font-medium transition-colors duration-300">Our Team</a>
+                    <a href="#contact" class="nav-link bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg">Contact</a>
+                </nav>
 
                 <!-- Mobile Menu Button -->
-                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                    <span class="hamburger"></span>
+                <button type="button" id="mobile-menu-btn" class="md:hidden text-neutral-700 hover:text-accent transition-colors" aria-label="Open menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
-
-                <!-- Navigation -->
-                <nav class="nav" id="main-nav" aria-label="Main navigation">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="#home" onclick="Router.navigateTo('home'); return false;" class="nav__link active" data-nav="home">Home</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#about" onclick="Router.navigateTo('about'); return false;" class="nav__link" data-nav="about">About</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#practice-areas" onclick="Router.navigateTo('practice-areas'); return false;" class="nav__link" data-nav="practice-areas">Practice Areas</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#our-people" onclick="Router.navigateTo('our-people'); return false;" class="nav__link" data-nav="our-people">Our People</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#articles" onclick="Router.navigateTo('articles'); return false;" class="nav__link" data-nav="articles">Articles</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#contact" onclick="Router.navigateTo('contact'); return false;" class="nav__link nav__link--cta" data-nav="contact">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main id="main-content" class="main">
-        <div id="page-content" class="page-transition">
-            <!-- Loading state -->
-            <div class="loading-container">
-                <div class="loader"></div>
-                <p>Loading...</p>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-primary-900 z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex flex-col h-full">
+            <!-- Close Button -->
+            <div class="flex justify-end p-6">
+                <button type="button" id="mobile-menu-close" class="text-white hover:text-accent transition-colors" aria-label="Close menu">
+                    <i data-lucide="x" class="w-8 h-8"></i>
+                </button>
             </div>
+
+            <!-- Mobile Nav Links -->
+            <nav class="flex flex-col px-8 space-y-6">
+                <a href="#home" class="mobile-nav-link text-white text-2xl font-medium hover:text-accent transition-colors duration-300">Home</a>
+                <a href="#about" class="mobile-nav-link text-white text-2xl font-medium hover:text-accent transition-colors duration-300">About</a>
+                <a href="#practice-areas" class="mobile-nav-link text-white text-2xl font-medium hover:text-accent transition-colors duration-300">Practice Areas</a>
+                <a href="#team" class="mobile-nav-link text-white text-2xl font-medium hover:text-accent transition-colors duration-300">Our Team</a>
+                <a href="#contact" class="mobile-nav-link bg-accent hover:bg-accent-dark text-white px-6 py-4 rounded-lg font-medium transition-all duration-300 text-center text-2xl mt-4">Contact</a>
+            </nav>
         </div>
+    </div>
+
+    <!-- Spacer for fixed header -->
+    <div id="header-spacer" class="h-20" style="display: none;"></div>
+
+    <!-- Main Content -->
+    <main id="page-content" class="fade-in">
+        <!-- Page content will be loaded here dynamically -->
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__content">
-                <div class="footer__info">
-                    <p class="footer__text">
-                        &copy; 2025 Nizar & Partners. All rights reserved.
-                    </p>
-                    <p class="footer__text">
-                        Advocates & Solicitors - 1st Floor, Middle Office, 627 Jalan 17/8, 46400 Petaling Jaya, Selangor
+    <footer class="bg-primary-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Column 1: Firm Info -->
+                <div>
+                    <img src="assets/images/nizar_logo.svg" alt="Nizar & Partners" class="h-12 mb-4 brightness-0 invert">
+                    <p class="text-lg font-serif mb-2">Advocates & Solicitors</p>
+                    <p class="text-neutral-300 text-sm">Legal Solutions for Real-World Decisions</p>
+                </div>
+
+                <!-- Column 2: Office -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4 flex items-center gap-2">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-accent"></i>
+                        Office
+                    </h4>
+                    <p class="text-neutral-300 leading-relaxed">
+                        1st Floor - Middle Office<br>
+                        627 Jalan 17/8<br>
+                        46400 Petaling Jaya<br>
+                        Selangor, Malaysia
                     </p>
                 </div>
+
+                <!-- Column 3: Contact -->
+                <div>
+                    <h4 class="font-semibold text-lg mb-4 flex items-center gap-2">
+                        <i data-lucide="phone" class="w-5 h-5 text-accent"></i>
+                        Contact
+                    </h4>
+                    <p class="text-neutral-300 leading-relaxed">
+                        <span class="block mb-2">Phone: <a href="tel:+60327036160" class="hover:text-accent transition-colors">+60 3 2703 6160</a></span>
+                        <span class="block mb-2">Fax: +60 3 2703 6159</span>
+                        <span class="block">Email: <a href="mailto:partners@aaflegal.com" class="hover:text-accent transition-colors">partners@aaflegal.com</a></span>
+                    </p>
+                </div>
+            </div>
+
+            <div class="border-t border-neutral-700 pt-8 text-center text-neutral-400 text-sm">
+                <p>&copy; 2025 Nizar & Partners. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
     <!-- JavaScript -->
-    <script src="static/js/utils.js"></script>
-    <script src="static/js/router.js"></script>
-    <script src="static/js/navigation.js"></script>
-    <script src="static/js/form.js"></script>
-    <script src="static/js/animations.js"></script>
-    <script src="static/js/main.js"></script>
+    <script src="assets/js/router.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/form.js"></script>
+
+    <script>
+        // Initialize icons
+        lucide.createIcons();
+
+        // Load home page on initial load
+        if (!window.location.hash || window.location.hash === '#') {
+            window.location.hash = '#home';
+        }
+
+        // Navigate to the current hash page
+        const initialPage = window.location.hash.slice(1) || 'home';
+        navigateTo(initialPage);
+
+        // Navigation transparency on scroll
+        const header = document.getElementById('main-header');
+        const headerSpacer = document.getElementById('header-spacer');
+        let lastScrollY = window.scrollY;
+
+        function updateHeaderStyle() {
+            const currentPage = window.location.hash.slice(1) || 'home';
+            const scrollY = window.scrollY;
+
+            console.log('Current page:', currentPage, 'Scroll Y:', scrollY); // Debug log
+
+            if (currentPage === 'home') {
+                // Hide spacer on home page so hero is full screen
+                headerSpacer.style.display = 'none';
+                
+                if (scrollY < 100) {
+                    header.classList.add('transparent');
+                    console.log('Added transparent class'); // Debug log
+                } else {
+                    header.classList.remove('transparent');
+                    console.log('Removed transparent class'); // Debug log
+                }
+            } else {
+                // Show spacer on other pages
+                headerSpacer.style.display = 'block';
+                header.classList.remove('transparent');
+            }
+
+            lastScrollY = scrollY;
+        }
+
+        // Update on scroll
+        window.addEventListener('scroll', updateHeaderStyle);
+
+        // Update on hash change
+        window.addEventListener('hashchange', () => {
+            // Wait for scroll to complete
+            setTimeout(updateHeaderStyle, 150);
+            // Check again after a bit more time
+            setTimeout(updateHeaderStyle, 500);
+        });
+
+        // Initial check - run multiple times to ensure it catches
+        setTimeout(updateHeaderStyle, 100);
+        setTimeout(updateHeaderStyle, 300);
+        setTimeout(updateHeaderStyle, 500);
+    </script>
+
 </body>
 </html>

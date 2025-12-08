@@ -1,0 +1,236 @@
+<!-- Page Header -->
+<section class="py-20 bg-gradient-to-b from-primary-900 to-primary-800 text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-5xl md:text-6xl font-serif font-bold mb-6">
+            Get In Touch
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 leading-relaxed">
+            We're here to help with your legal matters
+        </p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12">
+
+            <!-- Contact Form -->
+            <div>
+                <h2 class="text-3xl font-serif font-bold text-primary-900 mb-6">
+                    Send Us a Message
+                </h2>
+                <p class="text-neutral-600 mb-8 leading-relaxed">
+                    Fill out the form below and we'll get back to you as soon as possible.
+                </p>
+
+                <!-- Form Message Area -->
+                <div id="form-message" class="hidden mb-6"></div>
+
+                <form id="contact-form" class="space-y-6">
+                    <!-- Name Field -->
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-neutral-700 mb-2">
+                            Full Name <span class="text-red-500">*</span>
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                            class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                            placeholder="John Doe"
+                        >
+                    </div>
+
+                    <!-- Email Field -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-neutral-700 mb-2">
+                            Email Address <span class="text-red-500">*</span>
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                            placeholder="john@example.com"
+                        >
+                    </div>
+
+                    <!-- Phone Field -->
+                    <div>
+                        <label for="phone" class="block text-sm font-medium text-neutral-700 mb-2">
+                            Phone Number
+                        </label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                            placeholder="+60 12 345 6789"
+                        >
+                    </div>
+
+                    <!-- Subject Field -->
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-neutral-700 mb-2">
+                            Subject
+                        </label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all"
+                            placeholder="How can we help you?"
+                        >
+                    </div>
+
+                    <!-- Message Field -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-neutral-700 mb-2">
+                            Message <span class="text-red-500">*</span>
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="5"
+                            required
+                            class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all resize-none"
+                            placeholder="Tell us about your legal matter..."
+                        ></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button
+                        type="submit"
+                        class="w-full bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                    >
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div>
+                <h2 class="text-3xl font-serif font-bold text-primary-900 mb-6">
+                    Contact Information
+                </h2>
+                <p class="text-neutral-600 mb-8 leading-relaxed">
+                    Reach out to us directly using the information below or visit our office.
+                </p>
+
+                <div class="space-y-8">
+                    <!-- Office Address -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <i data-lucide="map-pin" class="w-6 h-6 text-accent"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-primary-900 mb-2">Office Location</h3>
+                            <p class="text-neutral-600 leading-relaxed">
+                                1st Floor - Middle Office<br>
+                                627 Jalan 17/8<br>
+                                46400 Petaling Jaya<br>
+                                Selangor, Malaysia
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <i data-lucide="phone" class="w-6 h-6 text-accent"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-primary-900 mb-2">Phone & Fax</h3>
+                            <p class="text-neutral-600 leading-relaxed">
+                                Phone: <a href="tel:+60327036160" class="text-accent hover:text-accent-dark transition-colors">+60 3 2703 6160</a><br>
+                                Fax: +60 3 2703 6159
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <i data-lucide="mail" class="w-6 h-6 text-accent"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-primary-900 mb-2">Email</h3>
+                            <p class="text-neutral-600 leading-relaxed">
+                                General: <a href="mailto:partners@aaflegal.com" class="text-accent hover:text-accent-dark transition-colors">partners@aaflegal.com</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Partner Contacts -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <i data-lucide="users" class="w-6 h-6 text-accent"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-primary-900 mb-3">Direct Partner Contact</h3>
+                            <div class="space-y-2 text-neutral-600">
+                                <p>
+                                    Wan Azwan Aiman:<br>
+                                    <a href="mailto:azwan@aaflegal.com" class="text-accent hover:text-accent-dark transition-colors">azwan@aaflegal.com</a>
+                                </p>
+                                <p>
+                                    Daniel Husseini:<br>
+                                    <a href="mailto:daniel@aaflegal.com" class="text-accent hover:text-accent-dark transition-colors">daniel@aaflegal.com</a>
+                                </p>
+                                <p>
+                                    Farhan Nizar Malek:<br>
+                                    <a href="mailto:farhan@aaflegal.com" class="text-accent hover:text-accent-dark transition-colors">farhan@aaflegal.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Office Hours -->
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0 w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <i data-lucide="clock" class="w-6 h-6 text-accent"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-primary-900 mb-2">Office Hours</h3>
+                            <p class="text-neutral-600 leading-relaxed">
+                                Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                Saturday - Sunday: Closed
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Map Section (Optional - placeholder) -->
+<section class="py-12 bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-lg shadow-md p-8 text-center">
+            <div class="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <i data-lucide="map" class="w-8 h-8 text-accent"></i>
+            </div>
+            <h3 class="text-2xl font-serif font-bold text-primary-900 mb-3">
+                Find Us on the Map
+            </h3>
+            <p class="text-neutral-600 mb-6">
+                Our office is conveniently located in Petaling Jaya, easily accessible from Kuala Lumpur.
+            </p>
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=627+Jalan+17%2F8+46400+Petaling+Jaya+Selangor+Malaysia"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg"
+            >
+                <i data-lucide="navigation" class="w-5 h-5"></i>
+                Open in Google Maps
+            </a>
+        </div>
+    </div>
+</section>
