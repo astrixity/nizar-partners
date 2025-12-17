@@ -1,6 +1,7 @@
 // Simple SPA Router for Nizar & Partners website
 
 let currentPage = '';
+let scrollPositions = {}; // Store scroll positions for each page
 
 async function navigateTo(pageName) {
     // Prevent reloading the same page
@@ -9,6 +10,11 @@ async function navigateTo(pageName) {
     }
 
     const pageContent = document.getElementById('page-content');
+
+    // Save scroll position of current page before navigating away
+    if (currentPage === 'team') {
+        scrollPositions['team'] = window.scrollY;
+    }
 
     // Fade out current content
     pageContent.classList.remove('fade-in');
@@ -19,6 +25,7 @@ async function navigateTo(pageName) {
 
     try {
         // Fetch new page content
+        // Support nested paths (e.g., our_team/profile-farhan-nizar)
         const response = await fetch(`pages/${pageName}.html`);
 
         if (!response.ok) {
@@ -42,8 +49,15 @@ async function navigateTo(pageName) {
         // Update page title
         updateTitle(pageName);
 
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Restore scroll position for team page, or scroll to top for others
+        if (pageName === 'team' && scrollPositions['team'] !== undefined) {
+            // Use setTimeout to ensure content is fully rendered before scrolling
+            setTimeout(() => {
+                window.scrollTo({ top: scrollPositions['team'], behavior: 'smooth' });
+            }, 100);
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
         // Fade in new content
         pageContent.classList.remove('fade-out');
@@ -105,7 +119,11 @@ function updateTitle(pageName) {
         'about': 'About Us | Nizar & Partners',
         'practice-areas': 'Practice Areas | Nizar & Partners',
         'team': 'Our Team | Nizar & Partners',
-        'contact': 'Contact Us | Nizar & Partners'
+        'contact': 'Contact Us | Nizar & Partners',
+        'our_team/profile-farhan-nizar': 'Farhan Nizar Bin Malek | Nizar & Partners',
+        'our_team/profile-leon': 'Leon Puung Li Wei | Nizar & Partners',
+        'our_team/profile-syed-haniff': 'YM Syed Haniff Iskandar | Nizar & Partners',
+        'our_team/profile-salman': 'Muhammad Salman bin Fyrrol Emron | Nizar & Partners'
     };
 
     document.title = titles[pageName] || 'Nizar & Partners';
