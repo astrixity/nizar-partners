@@ -1,6 +1,24 @@
-// Telegram Bot Configuration
-const TELEGRAM_BOT_TOKEN = '7993050617:AAEhBeQr_uNA-Yq2KmmJi079fnrX-E9ziL8';
-const TELEGRAM_CHAT_ID = '-5055609821';
+// Telegram Bot Configuration (obfuscated)
+const SALT = 'NizarPartners2025';
+
+// Simple deobfuscation function
+function deobfuscate(encoded) {
+    try {
+        const decoded = atob(encoded);
+        let result = '';
+        for (let i = 0; i < decoded.length; i++) {
+            result += String.fromCharCode(decoded.charCodeAt(i) ^ SALT.charCodeAt(i % SALT.length));
+        }
+        return result;
+    } catch (e) {
+        console.error('Deobfuscation failed');
+        return '';
+    }
+}
+
+// Obfuscated credentials
+const TELEGRAM_BOT_TOKEN = deobfuscate('XUpQVgMCEhYJRU4ZEAdCXksPRRcSVQwXAEpLQR0RQU4GD0pOQ0caBRdL');
+const TELEGRAM_CHAT_ID = deobfuscate('JloeGBkVFxoZGg4a');
 
 // Initialize form handler when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
